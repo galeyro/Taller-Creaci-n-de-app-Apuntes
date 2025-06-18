@@ -42,18 +42,24 @@ namespace GuevaraGCreacionAppApuntes.Views
             await Shell.Current.GoToAsync("..");
         }
 
-        private void LoadNote(string _fileName)
+        private void LoadNote(string fileName)
         {
             Models.Note noteModel = new Models.Note();
-            noteModel.Filename = _fileName;
+            noteModel.Filename = fileName;
 
-            if (File.Exists(_fileName))
+            if (File.Exists(fileName))
             {
-                noteModel.Date = File.GetCreationTime(_fileName);
-                noteModel.Text = File.ReadAllText(_fileName);
+                noteModel.Date = File.GetCreationTime(fileName);
+                noteModel.Text = File.ReadAllText(fileName);
             }
 
             BindingContext = noteModel;
+
+            // Mostrar la ruta en el Label
+            if (PathLabel != null) // Ensure PathLabel is defined
+            {
+                PathLabel.Text = fileName;
+            }
         }
     }
 }

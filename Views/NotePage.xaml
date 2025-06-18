@@ -11,6 +11,11 @@
                 Text="{Binding Text}"
                 HeightRequest="100" />
 
+        <Label x:Name="PathLabel"
+               FontSize="12"
+               TextColor="Gray"
+               Margin="0,10,0,0"/>
+
         <Grid ColumnDefinitions="*,*" ColumnSpacing="4">
             <Button Text="Save"
                     Clicked="SaveButton_Clicked" />
