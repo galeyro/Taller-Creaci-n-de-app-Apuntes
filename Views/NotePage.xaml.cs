@@ -10,8 +10,11 @@ namespace GuevaraGCreacionAppApuntes.Views
         public NotePage()
         {
             InitializeComponent();
-            if (File.Exists(_fileName))
-                TextEditor.Text = File.ReadAllText(_fileName);
+
+            string appDataPath = FileSystem.AppDataDirectory;
+            string randomFileName = $"{Path.GetRandomFileName()}.notes.txt";
+
+            LoadNote(Path.Combine(appDataPath, randomFileName));
         }
 
         private void SaveButton_Clicked(object sender, EventArgs e)
@@ -25,6 +28,20 @@ namespace GuevaraGCreacionAppApuntes.Views
                 File.Delete(_fileName);
 
             TextEditor.Text = string.Empty;
+        }
+
+        private void LoadNote(string _fileName)
+        {
+            Models.Note noteModel = new Models.Note();
+            noteModel.Filename = _fileName;
+
+            if (File.Exists(_fileName))
+            {
+                noteModel.Date = File.GetCreationTime(_fileName);
+                noteModel.Text = File.ReadAllText(_fileName);
+            }
+
+            BindingContext = noteModel;
         }
     }
 }
