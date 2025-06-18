@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:GuevaraGCreacionAppApuntes"
     xmlns:views="clr-namespace:GuevaraGCreacionAppApuntes.Views"
     Shell.FlyoutBehavior="Disabled"
-    Title="App apuntes by galeyro">
+    Title="App apuntes by Galo Guevara">
 
     <TabBar>
         <ShellContent

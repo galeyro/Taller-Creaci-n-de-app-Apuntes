@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:models="clr-namespace:GuevaraGCreacionAppApuntes.Models"
              x:Class="GuevaraGCreacionAppApuntes.Views.AllNotesPage"
-             Title="Your Notes"
+             Title="Your Notes by Galo Guevara"
              x:DataType="models:AllNotes">
     <!-- Add an item to the toolbar -->
     <ContentPage.ToolbarItems>
